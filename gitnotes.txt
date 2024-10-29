@@ -176,3 +176,4 @@ Date:   Tue Oct 29 14:10:22 2024 +0530
     my first file abc.txt
 
 D:\git_repositories\myexample>
+git clone https://github.com/sethu108/myexample.git
