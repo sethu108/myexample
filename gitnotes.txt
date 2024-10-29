@@ -1,0 +1,178 @@
+
+D:\git_repositories\myexample>git checkout -b yourbranch
+Switched to a new branch 'yourbranch'
+
+D:\git_repositories\myexample>git branch -a
+  master
+* yourbranch
+  remotes/origin/arichbranch
+  remotes/origin/https/github.com/sethu108/time-tracker.git
+  remotes/origin/master
+  remotes/origin/mybranch
+
+D:\git_repositories\myexample>notepad yourbranch.txt
+
+D:\git_repositories\myexample>git add .
+
+D:\git_repositories\myexample>git commit -m "yourbranch"
+[yourbranch ed5a644] yourbranch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 yourbranch.txt
+
+D:\git_repositories\myexample>git push origin master
+Everything up-to-date
+
+D:\git_repositories\myexample>git checkout master
+Switched to branch 'master'
+
+D:\git_repositories\myexample>git push origin yourbranch
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 291 bytes | 291.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'yourbranch' on GitHub by visiting:
+remote:      https://github.com/sethu108/myexample/pull/new/yourbranch
+remote:
+To https://github.com/sethu108/myexample.git
+ * [new branch]      yourbranch -> yourbranch
+
+D:\git_repositories\myexample>
+
+D:\git_repositories\myexample>git reflog
+f55ca60 (HEAD -> master, origin/master) HEAD@{0}: checkout: moving from yourbranch to master
+ed5a644 (origin/yourbranch, yourbranch) HEAD@{1}: commit: yourbranch
+f55ca60 (HEAD -> master, origin/master) HEAD@{2}: checkout: moving from master to yourbranch
+f55ca60 (HEAD -> master, origin/master) HEAD@{3}: pull origin master: Fast-forward
+0ab6542 HEAD@{4}: commit: added all files that are pending for change
+d4f3ef4 HEAD@{5}: commit: updated abc.txt
+835b977 HEAD@{6}: commit (initial): my first file abc.txt
+
+D:\git_repositories\myexample>git log --summary
+commit f55ca60c1bd7e6d885fc30a824932089436ac4d2 (HEAD -> master, origin/master)
+Author: sethu108 <43598495+sethu108@users.noreply.github.com>
+Date:   Tue Oct 29 14:31:15 2024 +0530
+
+    Create newfileinmydir.txt
+
+    newfileinmydir.txt
+
+ create mode 100644 mydir/newfileinmydir.txt
+
+commit 926c07f4ac541f81bf351309e9ffdbe1a71f1b34
+Author: sethu108 <43598495+sethu108@users.noreply.github.com>
+Date:   Tue Oct 29 14:30:45 2024 +0530
+
+    Update def.txt
+
+    updated the file
+
+
+commit 0ab65426589b651d9dfd457d9c8f82ebdbecee98
+Author: sethu108 <r_sethuraman@outlook.com>
+Date:   Tue Oct 29 14:13:04 2024 +0530
+
+    added all files that are pending for change
+
+ create mode 100644 def.txt
+ create mode 100644 mydir/mydir.txt
+
+commit d4f3ef4aeba0deedbbc6b171813c675ef9891914
+Author: sethu108 <r_sethuraman@outlook.com>
+Date:   Tue Oct 29 14:11:02 2024 +0530
+
+    updated abc.txt
+
+
+commit 835b97779a39289d7efe28fc031f64a8efa06767
+Author: sethu108 <r_sethuraman@outlook.com>
+Date:   Tue Oct 29 14:10:22 2024 +0530
+
+    my first file abc.txt
+
+
+D:\git_repositories\myexample>git log --oneline
+f55ca60 (HEAD -> master, origin/master) Create newfileinmydir.txt
+926c07f Update def.txt
+0ab6542 added all files that are pending for change
+d4f3ef4 updated abc.txt
+835b977 my first file abc.txt
+
+D:\git_repositories\myexample>git reflog
+f55ca60 (HEAD -> master, origin/master) HEAD@{0}: checkout: moving from yourbranch to master
+ed5a644 (origin/yourbranch, yourbranch) HEAD@{1}: commit: yourbranch
+f55ca60 (HEAD -> master, origin/master) HEAD@{2}: checkout: moving from master to yourbranch
+f55ca60 (HEAD -> master, origin/master) HEAD@{3}: pull origin master: Fast-forward
+0ab6542 HEAD@{4}: commit: added all files that are pending for change
+d4f3ef4 HEAD@{5}: commit: updated abc.txt
+835b977 HEAD@{6}: commit (initial): my first file abc.txt
+
+D:\git_repositories\myexample>git log f55ca60..0ab6542
+
+D:\git_repositories\myexample>git log 0ab6542 .. f55ca60
+fatal: f55ca60: no such path in the working tree.
+Use 'git <command> -- <path>...' to specify paths that do not exist locally.
+
+D:\git_repositories\myexample>git log 0ab6542..f55ca60
+commit f55ca60c1bd7e6d885fc30a824932089436ac4d2 (HEAD -> master, origin/master)
+Author: sethu108 <43598495+sethu108@users.noreply.github.com>
+Date:   Tue Oct 29 14:31:15 2024 +0530
+
+    Create newfileinmydir.txt
+
+    newfileinmydir.txt
+
+commit 926c07f4ac541f81bf351309e9ffdbe1a71f1b34
+Author: sethu108 <43598495+sethu108@users.noreply.github.com>
+Date:   Tue Oct 29 14:30:45 2024 +0530
+
+    Update def.txt
+
+    updated the file
+
+D:\git_repositories\myexample>git branch -a
+* master
+  yourbranch
+  remotes/origin/arichbranch
+  remotes/origin/https/github.com/sethu108/time-tracker.git
+  remotes/origin/master
+  remotes/origin/mybranch
+  remotes/origin/yourbranch
+
+D:\git_repositories\myexample>dir
+ Volume in drive D is New Volume
+ Volume Serial Number is 4E96-01CF
+
+ Directory of D:\git_repositories\myexample
+
+29-10-2024  14:38    <DIR>          .
+29-10-2024  14:38    <DIR>          ..
+29-10-2024  14:11                49 abc.txt
+29-10-2024  14:36                56 def.txt
+29-10-2024  14:36    <DIR>          mydir
+               2 File(s)            105 bytes
+               3 Dir(s)  1,858,658,029,568 bytes free
+
+D:\git_repositories\myexample>git log --follow abc.txt
+commit 0ab65426589b651d9dfd457d9c8f82ebdbecee98
+Author: sethu108 <r_sethuraman@outlook.com>
+Date:   Tue Oct 29 14:13:04 2024 +0530
+
+    added all files that are pending for change
+
+commit d4f3ef4aeba0deedbbc6b171813c675ef9891914
+Author: sethu108 <r_sethuraman@outlook.com>
+Date:   Tue Oct 29 14:11:02 2024 +0530
+
+    updated abc.txt
+
+commit 835b97779a39289d7efe28fc031f64a8efa06767
+Author: sethu108 <r_sethuraman@outlook.com>
+Date:   Tue Oct 29 14:10:22 2024 +0530
+
+    my first file abc.txt
+
+D:\git_repositories\myexample>
